@@ -40,6 +40,7 @@ header {
   background-image: url("../images/HeaderBackground.jpg");
   background-color: #303030;
   background-size: cover;
+  background-position-x: center;
   min-height: 746px;
 }
 header .HeaderTop {
@@ -82,13 +83,16 @@ header .HeaderTop ul #input {
   border-radius: 10px;
   margin-right: 20px;
 }
-header .HeaderTop ul img {
+header .HeaderTop ul .SearchButton {
   cursor: pointer;
   margin-right: 58px;
   transition: 0.8s;
 }
-header .HeaderTop ul img:hover {
+header .HeaderTop ul .SearchButton:hover {
   transform: rotate(360deg);
+}
+header .HeaderTop ul #Burger{
+  display: none;
 }
 header .HeaderBottom {
   margin-top: 100px;
@@ -148,7 +152,7 @@ header .HeaderBottom div a:hover {
       font-size: 30.5px;
       margin-right: 69.5px;
     }
-    header .HeaderTop ul img{
+    header .HeaderTop ul .SearchButton{
       height: 40px;
     }
     header .HeaderBottom div h1{
@@ -185,32 +189,172 @@ header .HeaderBottom div a:hover {
       margin-right: 95px;
     }
 }
-@media (max-width: 1170px){
+@media (max-width: 1024px){
     header .HeaderBottom{
-      margin-right: 55px;
+      margin-right: 24px;
+    }
+}
+@media (max-width: 960px){
+    header .HeaderBottom{
+      margin-right: 50px;
     }
     header .HeaderTop ul li a{
       margin-right: 40px;
     }
-    header .HeaderTop ul{
-      justify-content: end;
-      max-width: 700px;
-      flex-wrap: wrap;
+    header .HeaderTop .HeaderTop_Logo img{
+      height: 37px;
     }
- 
 }
-@media (max-width: 1100px){
-    
-    header .HeaderBottom div h1{
-      font-size: 90px;
-    }
-    header .HeaderBottom div h3{
-      font-size: 21px;
-    }
-    header .HeaderTop ul img{
-      margin-right: 30px;
-    }
+@media (max-width: 870px){
     header .HeaderBottom{
-      margin-top: 140px;
+      margin-right: 24px;
     }
+    header .HeaderTop ul{
+      max-width: 580px;
+    }
+    header .HeaderTop ul .SearchButton{
+      position: absolute;
+      top: 110px;
+      right: 20px;
+    }
+}
+@media (max-width: 800px){
+  header .HeaderTop .HeaderTop_Logo img{
+    margin-top: 8px;
+  }
+  header .HeaderBottom{
+    text-align: center;
+  }
+  header .HeaderTop ul li a{
+    margin-right: 35px;
+  }
+  header .HeaderBottom div h3{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 45px;
+  }
+  header .HeaderBottom div a{
+    font-size: 21px;
+  }
+  
+}
+@media (max-width: 768px){
+  .container{
+    max-width: 650px;
+  }
+  header .HeaderTop .HeaderTop_Logo{
+    margin-left: 0;
+  }
+  header .HeaderTop ul .SearchButton{
+    position: static;
+  }
+  header .HeaderTop ul li{
+    display: none;
+  }
+  header .HeaderTop ul #Burger{
+    display: flex;
+    height: 40px;
+  }
+  header .HeaderTop ul #input{
+    top: 60px;
+    right: 140px;
+    width: 200px;
+    height: 28px;
+  }
+  header .HeaderBottom{
+    margin-right: 0px;
+  }
+  header .HeaderBottom div h3{
+    font-size: 19px;
+  }
+}
+@media (max-width: 680px){
+  .container{
+    max-width: 500px;
+  }
+  .HeaderBottom__Span{
+    display: none;
+  }
+  header .HeaderBottom{
+    margin-top: 120px;
+  }
+  header .HeaderBottom div h3{
+    margin-right: 0px;
+    width: 320px;
+    font-size: 24px;
+  }
+  header .HeaderTop{
+    padding-top: 20px;
+  }
+  header .HeaderTop ul #input{
+    top: 76px;
+    right: 121px;
+    width: 188px;
+  }
+}
+@media (max-width: 540px){
+  .container{
+    max-width: 420px;
+  }
+  header .HeaderTop ul .SearchButton{
+    display: none;
+  }
+  header .HeaderTop ul #input{
+    top: 76px;
+    right: 86px;
+    width: 188px;
+  }
+  header .HeaderBottom div h1{
+    font-size: 80px;
+  }
+  header .HeaderBottom div h3{
+    width: 280px;
+  }
+}
+@media (max-width: 480px){
+  header{
+    background-position-x: right;
+  }
+  .container{
+    max-width: 350px;
+  }
+  header .HeaderTop .HeaderTop_Logo img{
+    height: 48px;
+  }
+  header .HeaderTop ul #Burger{
+    height: 50px;
+  }
+  header .HeaderBottom{
+    justify-content: center;
+  }
+  header .HeaderBottom div h1{
+    background-color: #303030;
+    font-size: 100px;
+  }
+  header .HeaderBottom div h3{
+    font-size: 24px;
+    width: 340px;
+  }
+}
+@media (max-width: 375px){
+  .container{
+    max-width: 300px;
+  }
+  header .HeaderBottom div h1{
+    font-size: 90px;
+  }
+  header .HeaderBottom div h3{
+    width: 300px;
+  }
+}
+@media (max-width: 320px){
+  .container{
+    max-width: 280px;
+  }
+  header .HeaderBottom div h1{
+    font-size: 80px;
+  }
+  header .HeaderBottom div h3{
+    width: 250px;
+  }
 }

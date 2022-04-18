@@ -44,11 +44,13 @@ ul{
 /*HEADER*/
 
 header{
+    background-position-x: center;
     margin: 0;
     padding: 0;
     background-image: url("../images/HeaderBackground.jpg");
     background-color: $backcolor;
     background-size: cover;
+    
     min-height: 746px;
     .HeaderTop{
         display: flex;
@@ -85,13 +87,17 @@ header{
                 border-radius: 10px;
                 margin-right: 20px;
             }
-            img{
+            .SearchButton{
                 cursor: pointer;
                 margin-right: 58px;
                 transition: 0.8s;
                 &:hover{
                 transform: rotate(360deg);
                 }
+            }
+            #Burger{
+                display: none;
+                height: 10px;
             }
         }
         
