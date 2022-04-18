@@ -1,0 +1,10 @@
+@mixin MainText($color, $size) {
+    color: $color;
+    font-size: $size;
+    font-family: "Montserrat";  
+}
+@mixin MainCaption($color, $size) {
+    color: $color;
+    font-size: $size;
+    font-family: 'Grand Hotel';  
+}

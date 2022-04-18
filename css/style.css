@@ -1,0 +1,216 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1330px;
+  margin: 0 auto;
+}
+
+/*HEADER*/
+header {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/HeaderBackground.jpg");
+  background-color: #303030;
+  background-size: cover;
+  min-height: 746px;
+}
+header .HeaderTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .HeaderTop .HeaderTop_Logo {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+header .HeaderTop ul {
+  align-items: center;
+  margin-top: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .HeaderTop ul li {
+  list-style: none;
+}
+header .HeaderTop ul li a {
+  color: #ffff;
+  font-size: 20px;
+  font-family: "Montserrat";
+  margin: 0;
+  margin-right: 60px;
+  transition: 0.5s;
+}
+header .HeaderTop ul li a:hover {
+  color: #ffff;
+  font-size: 20.5px;
+  font-family: "Montserrat";
+  margin-right: 59.5px;
+}
+header .HeaderTop ul #input {
+  display: none;
+  background-color: #303030;
+  height: 24px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+header .HeaderTop ul img {
+  cursor: pointer;
+  margin-right: 58px;
+  transition: 0.8s;
+}
+header .HeaderTop ul img:hover {
+  transform: rotate(360deg);
+}
+header .HeaderBottom {
+  margin-top: 100px;
+  display: flex;
+  justify-content: end;
+  margin-right: 220px;
+}
+header .HeaderBottom div h1 {
+  color: #ffc200;
+  font-size: 100px;
+  font-family: "Grand Hotel";
+  font-weight: 100;
+}
+header .HeaderBottom div h3 {
+  color: #ffff;
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 45px;
+  font-weight: 400;
+}
+header .HeaderBottom div a {
+  color: #333333;
+  font-size: 16px;
+  font-family: "Montserrat";
+  background-color: #ffc200;
+  font-weight: 700;
+  padding: 14px;
+  padding-left: 46px;
+  padding-right: 46px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+header .HeaderBottom div a:hover {
+  box-shadow: 5px 5px 5px black;
+}
+
+/*HEADER*/
+
+
+
+
+
+@media (min-width: 1670px){
+    .container{
+      max-width: 1800px;
+    }
+    header .HeaderBottom{
+      margin-right: 320px;
+    }
+    header .HeaderTop ul li a{
+      margin-right: 70px;
+      font-size: 30px;
+    }
+    header .HeaderTop ul li a:hover{
+      font-size: 30.5px;
+      margin-right: 69.5px;
+    }
+    header .HeaderTop ul img{
+      height: 40px;
+    }
+    header .HeaderBottom div h1{
+      font-size: 140px;
+    }
+    header .HeaderBottom div h3{
+      font-size: 31px;
+      margin-bottom: 65px;
+    }
+    header .HeaderBottom div a{
+      font-size: 27px;
+    }
+}
+@media (max-width: 1280px){
+    header .HeaderBottom{
+      margin-right: 120px;
+    }
+    header .HeaderTop ul{
+      justify-content: end;
+      max-width: 700px;
+      flex-wrap: wrap;
+    }
+    header .HeaderTop ul li a{
+      margin-right: 50px;
+    }
+    header .HeaderTop ul #input{
+      position: absolute;
+      top: 110px;
+      right: 60px;
+    }
+}
+@media (max-width: 1200px){
+    header .HeaderBottom{
+      margin-right: 95px;
+    }
+}
+@media (max-width: 1170px){
+    header .HeaderBottom{
+      margin-right: 55px;
+    }
+    header .HeaderTop ul li a{
+      margin-right: 40px;
+    }
+    header .HeaderTop ul{
+      justify-content: end;
+      max-width: 700px;
+      flex-wrap: wrap;
+    }
+ 
+}
+@media (max-width: 1100px){
+    
+    header .HeaderBottom div h1{
+      font-size: 90px;
+    }
+    header .HeaderBottom div h3{
+      font-size: 21px;
+    }
+    header .HeaderTop ul img{
+      margin-right: 30px;
+    }
+    header .HeaderBottom{
+      margin-top: 140px;
+    }
+}

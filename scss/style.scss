@@ -1,0 +1,185 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; 
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+@import url(/scss/variables.scss);
+@import url(/scss/mixins.scss);
+
+
+
+
+
+
+.wrapper{
+    min-width: 100%;
+    overflow: hidden;
+}
+.container{
+    max-width: 1330px;
+    margin: 0 auto;
+}
+
+
+
+
+
+/*HEADER*/
+
+header{
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/HeaderBackground.jpg");
+    background-color: $backcolor;
+    background-size: cover;
+    min-height: 746px;
+    .HeaderTop{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .HeaderTop_Logo{
+            margin-top: 40px;
+            margin-left: 60px;
+            
+        }
+        ul{
+            align-items: center;
+            margin-top: 54px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            li{
+                list-style: none;
+                a{
+                    @include MainText($whitecolor, 20px);
+                    margin: 0;
+                    margin-right: 60px;
+                    transition: 0.5s;
+                    &:hover{
+                    @include MainText($whitecolor, 20.5px);
+                    margin-right: 59.5px;
+                    }
+                }
+            }
+            #input{
+                display: none;
+                background-color: $backcolor;
+                height: 24px;
+                border-radius: 10px;
+                margin-right: 20px;
+            }
+            img{
+                cursor: pointer;
+                margin-right: 58px;
+                transition: 0.8s;
+                &:hover{
+                transform: rotate(360deg);
+                }
+            }
+        }
+        
+    }
+    .HeaderBottom{
+        margin-top: 100px;
+        display: flex;
+        justify-content: end;
+        margin-right: 220px;
+        div{
+            h1{
+                @include MainCaption($yellowcolor, 100px);
+                font-weight: 100;    
+            }
+            h3{
+                @include MainText($whitecolor, 24px);
+                line-height: 1.2;
+                text-align: left;
+                margin-bottom: 45px;
+                font-weight: 400; 
+                  
+            }
+            a{
+                @include MainText($darkcolor, 16px);
+                background-color: $yellowcolor;
+                font-weight: 700;
+                padding: 14px;
+                padding-left: 46px;
+                padding-right: 46px;
+                border-radius: 5px;
+                transition: 0.3s;
+                &:hover{
+                    box-shadow: 5px 5px 5px black;
+                }
+            }
+        }
+    }
+}
+
+
+/*HEADER*/
+
+
+
+
+
+
+
+
+/*MAIN*/
+
+
+
+
+/*MAIN*/
+
+
+
+
+
+
+
+
+
+
+/*FOOOTER*/
+
+
+
+
+/*FOOTER*/
+
+
+
+
+
+
+
+
+
+
+/*HEADER ADAPTATION*/
+
+@media(max-width: 1280px){
+   body{
+       padding: 100px;
+   }
+   
+}
+
+/*HEADER ADAPTATION*/
