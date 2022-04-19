@@ -130,6 +130,45 @@ header .HeaderBottom div a {
 header .HeaderBottom div a:hover {
   box-shadow: 5px 5px 5px black;
 }
+.PhoneMenu{
+  left: -100%;
+  top: 0px;
+  height: 140%;
+  position: fixed;
+  background: #333333e5;
+  backdrop-filter: blur(11px);
+  width: 100%;
+  transition: left 0.3s ease 0s;
+}
+.PhoneMenu nav{
+  display: flex;
+  justify-content: space-between;
+}
+.PhoneMenu nav img{
+  margin: 50px;
+  height: 50px;
+}
+.PhoneMenu nav ul{
+  margin-top: 50px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.PhoneMenu nav ul li{
+  list-style: none;
+  margin-top: 40px;
+}
+.PhoneMenu nav ul li a{
+  text-decoration: underline;
+  font-weight: 800;
+  font-size: 30px;
+  color: white;
+}
+.PhoneMenu nav .HeaderTop_Logo img{
+  margin: 0;
+  margin-bottom: 20px;
+}
 
 /*HEADER*/
 
@@ -246,7 +285,7 @@ header .HeaderBottom div a:hover {
     margin-left: 0;
   }
   header .HeaderTop ul .SearchButton{
-    position: static;
+    display: none;
   }
   header .HeaderTop ul li{
     display: none;
@@ -254,12 +293,6 @@ header .HeaderBottom div a:hover {
   header .HeaderTop ul #Burger{
     display: flex;
     height: 40px;
-  }
-  header .HeaderTop ul #input{
-    top: 60px;
-    right: 140px;
-    width: 200px;
-    height: 28px;
   }
   header .HeaderBottom{
     margin-right: 0px;
@@ -286,23 +319,10 @@ header .HeaderBottom div a:hover {
   header .HeaderTop{
     padding-top: 20px;
   }
-  header .HeaderTop ul #input{
-    top: 76px;
-    right: 121px;
-    width: 188px;
-  }
 }
 @media (max-width: 540px){
   .container{
     max-width: 420px;
-  }
-  header .HeaderTop ul .SearchButton{
-    display: none;
-  }
-  header .HeaderTop ul #input{
-    top: 76px;
-    right: 86px;
-    width: 188px;
   }
   header .HeaderBottom div h1{
     font-size: 80px;
@@ -319,10 +339,10 @@ header .HeaderBottom div a:hover {
     max-width: 350px;
   }
   header .HeaderTop .HeaderTop_Logo img{
-    height: 48px;
+    height: 40px;
   }
   header .HeaderTop ul #Burger{
-    height: 50px;
+    height: 40px;
   }
   header .HeaderBottom{
     justify-content: center;
@@ -335,6 +355,13 @@ header .HeaderBottom div a:hover {
     font-size: 24px;
     width: 340px;
   }
+  header .PhoneMenu nav ul{
+    margin-left: 30px;
+  }
+  header .PhoneMenu nav ul li a{
+    font-size: 35px;
+  }
+
 }
 @media (max-width: 375px){
   .container{
@@ -345,6 +372,12 @@ header .HeaderBottom div a:hover {
   }
   header .HeaderBottom div h3{
     width: 300px;
+  }
+  header .PhoneMenu nav .HeaderTop_Logo img{
+    height: 40px;
+  }
+  header .PhoneMenu nav ul li a{
+    font-size: 30px;
   }
 }
 @media (max-width: 320px){
