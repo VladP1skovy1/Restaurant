@@ -330,6 +330,15 @@ header .HeaderBottom div a:hover {
   header .HeaderBottom div h3{
     width: 280px;
   }
+  header .PhoneMenu nav .HeaderTop_Logo img{
+    height: 50px;
+  }
+  header .PhoneMenu nav ul{
+    margin-left: 30px;
+  }
+  header .PhoneMenu nav ul li a{
+    font-size: 27px;
+  }
 }
 @media (max-width: 480px){
   header{
@@ -344,9 +353,6 @@ header .HeaderBottom div a:hover {
   header .HeaderTop ul #Burger{
     height: 40px;
   }
-  header .PhoneMenu nav .HeaderTop_Logo img{
-    height: 50px;
-  }
   header .HeaderBottom{
     justify-content: center;
   }
@@ -358,12 +364,7 @@ header .HeaderBottom div a:hover {
     font-size: 24px;
     width: 340px;
   }
-  header .PhoneMenu nav ul{
-    margin-left: 30px;
-  }
-  header .PhoneMenu nav ul li a{
-    font-size: 27px;
-  }
+
 
 }
 @media (max-width: 375px){
