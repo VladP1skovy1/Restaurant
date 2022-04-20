@@ -21,8 +21,23 @@ ul{
 }
 
 
-@import url(/scss/variables.scss);
-@import url(/scss/mixins.scss);
+// @import url(../scss/variables.scss);
+// @import url(../scss/mixins.scss);
+$backcolor: #303030;
+$yellowcolor: #ffc200;
+$darkcolor: #333333;
+$whitecolor: #ffff;
+
+@mixin MainText($color, $size) {
+    color: $color;
+    font-size: $size;
+    font-family: "Montserrat";  
+}
+@mixin MainCaption($color, $size) {
+    color: $color;
+    font-size: $size;
+    font-family: 'Grand Hotel';  
+}
 
 
 
@@ -104,6 +119,47 @@ header{
         }
         
     }
+    .PhoneMenu{
+        left: -100%;
+        top: 0px;
+        height: 140%;
+        position: fixed;
+        background: #333333e5;
+        backdrop-filter: blur(11px);
+        width: 100%;
+        transition: left 0.3s ease 0s;
+      }
+      .PhoneMenu nav{
+        display: flex;
+        justify-content: space-between;
+      }
+      .PhoneMenu nav img{
+        margin: 50px;
+        height: 50px;
+      }
+      .PhoneMenu nav ul{
+        margin-top: 50px;
+        margin-left: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .PhoneMenu nav ul li{
+        list-style: none;
+        margin-top: 40px;
+      }
+      .PhoneMenu nav ul li a{
+        text-decoration: underline;
+        font-weight: 800;
+        font-size: 30px;
+        color: white;
+      }
+      .PhoneMenu nav .HeaderTop_Logo img{
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      
+    
     .HeaderBottom{
         margin-top: 100px;
         display: flex;
@@ -167,7 +223,75 @@ header{
 
 /*FOOOTER*/
 
-
+footer{
+    height: 800px;
+    background-color: $backcolor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .Footer{
+        display: flex;
+        justify-content: space-around;
+        align-items: self-start;
+        .Footer__LeftSide{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                @include MainText($whitecolor, 30px);
+                text-transform: uppercase; 
+                margin-bottom: 39px
+            }
+            h3{
+                @include MainText($whitecolor, 24px);
+                font-weight: 300;
+                margin-bottom: 35px;
+                max-width: 400px;
+            }
+            img{
+                margin-right: 15px;
+                transition: 0.8s;
+                &:hover{
+                transform: rotate(360deg);
+                }
+            }
+        }
+        .Footer__RightSide{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+            .RightSide__Block{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin-right: 50px;
+                    &:nth-child(#{3}n){
+                        margin: 0;
+                    }
+                h2{
+                    @include MainText($whitecolor, 30px);
+                    text-transform: uppercase; 
+                    margin-bottom: 39px
+                }
+                h3{
+                    margin-bottom: 20px;
+                    a{
+                        @include MainText($whitecolor, 24px);
+                        font-weight: 300;
+                        transition: 0.3s;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+    
+}
 
 
 /*FOOTER*/
@@ -181,13 +305,439 @@ header{
 
 
 
-/*HEADER ADAPTATION*/
+/*ADAPTATION*/
 
-@media(max-width: 1280px){
-   body{
-       padding: 100px;
-   }
+  
+  @media (min-width: 1670px){
+      .container{
+        max-width: 1800px;
+      }
+      header .HeaderBottom{
+        margin-right: 320px;
+      }
+      header .HeaderTop ul li a{
+        margin-right: 70px;
+        font-size: 30px;
+      }
+      header .HeaderTop ul li a:hover{
+        font-size: 30.5px;
+        margin-right: 69.5px;
+      }
+      header .HeaderTop ul .SearchButton{
+        height: 40px;
+      }
+      header .HeaderBottom div h1{
+        font-size: 140px;
+      }
+      header .HeaderBottom div h3{
+        font-size: 31px;
+        margin-bottom: 65px;
+      }
+      header .HeaderBottom div a{
+        font-size: 27px;
+      }
+
+
+
    
-}
+   
 
-/*HEADER ADAPTATION*/
+
+
+  }
+  @media (max-width: 1280px){
+      header .HeaderBottom{
+        margin-right: 120px;
+      }
+      header .HeaderTop ul{
+        justify-content: end;
+        max-width: 700px;
+        flex-wrap: wrap;
+      }
+      header .HeaderTop ul li a{
+        margin-right: 50px;
+      }
+      header .HeaderTop ul #input{
+        position: absolute;
+        top: 110px;
+        right: 60px;
+      }
+      footer{
+        .Footer{
+            .Footer__LeftSide{
+                  h2{
+                      font-size: 24px;
+                      margin-bottom: 30px;
+                  }
+                  h3{
+                      font-size: 20px;
+                  }
+            }
+            .Footer__RightSide{
+                  .RightSide__Block{
+                      margin-right: 40px;
+                      h2{
+                          font-size: 24px;
+                          margin-bottom: 30px;
+                      }
+                      h3{
+                            margin-bottom: 15px;
+                          a{
+                              font-size: 20px;
+                          }
+                      }
+                  }
+            }
+        }
+    }
+  }
+  @media (max-width: 1200px){
+      header .HeaderBottom{
+        margin-right: 95px;
+      }
+  }
+  @media (max-width: 1024px){
+      header .HeaderBottom{
+        margin-right: 24px;
+      }
+      footer{
+          height: 500px;
+        .Footer{
+            .Footer__LeftSide{
+                  h2{
+                      font-size: 24px;
+                      margin-bottom: 25px;
+                    }
+                  h3{
+                      font-size: 20px;
+                    }
+                }
+            .Footer__RightSide{
+                  .RightSide__Block{
+                      margin-right: 40px;
+                      h2{
+                          font-size: 24px;
+                          margin-bottom: 30px;
+                        }
+                      h3{
+                            margin-bottom: 15px;
+                          a{
+                              font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+  }
+  @media (max-width: 960px){
+      header .HeaderBottom{
+        margin-right: 50px;
+      }
+      header .HeaderTop ul li a{
+        margin-right: 40px;
+      }
+      header .HeaderTop .HeaderTop_Logo img{
+        height: 37px;
+      }
+      footer{
+        height: 500px;
+      .Footer{
+          .Footer__LeftSide{
+                h2{
+                    font-size: 21px;
+                    margin-bottom: 25px;
+                  }
+                h3{
+                    font-size: 18px;
+                    max-width: 300px;
+                  }
+              }
+          .Footer__RightSide{
+                .RightSide__Block{
+                    margin-right: 30px;
+                    h2{
+                        font-size: 21px;
+                        margin-bottom: 30px;
+                      }
+                    h3{
+                          margin-bottom: 10px;
+                        a{
+                            font-size: 18px;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+  @media (max-width: 870px){
+      header .HeaderBottom{
+        margin-right: 24px;
+      }
+      header .HeaderTop ul{
+        max-width: 580px;
+      }
+      header .HeaderTop ul .SearchButton{
+        position: absolute;
+        top: 110px;
+        right: 20px;
+      }
+      
+      
+  }
+  @media (max-width: 800px){
+    header .HeaderTop .HeaderTop_Logo img{
+      margin-top: 8px;
+    }
+    header .HeaderBottom{
+      text-align: center;
+    }
+    header .HeaderTop ul li a{
+      margin-right: 35px;
+    }
+    header .HeaderBottom div h3{
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 45px;
+    }
+    header .HeaderBottom div a{
+      font-size: 21px;
+    }
+
+
+
+    footer{
+        flex-direction: row;
+        justify-content: center;
+      .Footer{
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+          .Footer__LeftSide{
+                align-items: center;
+                h2{
+                    display: none;
+                  }
+                h3{
+                    display: none;
+                  }
+                  margin-top: 40px;
+              }
+          .Footer__RightSide{
+                width: 100%;
+                .RightSide__Block{
+                    align-items: center;
+                    width: 200px;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                    &:nth-child(#{3}n){
+                        margin-right: 15px;
+                        margin-left: 15px;
+                    }
+                    h2{
+                        margin-top: 20px;
+                        font-size: 21px;
+                        margin-bottom: 30px;
+                      }
+                    h3{
+                          margin-bottom: 10px;
+                        a{
+                            font-size: 18px;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    
+    
+  }
+  @media (max-width: 768px){
+    .container{
+      max-width: 650px;
+    }
+    header .HeaderTop .HeaderTop_Logo{
+      margin-left: 0;
+    }
+    header .HeaderTop ul .SearchButton{
+      display: none;
+    }
+    header .HeaderTop ul li{
+      display: none;
+    }
+    header .HeaderTop ul #Burger{
+      display: flex;
+      height: 40px;
+    }
+    header .HeaderBottom{
+      margin-right: 0px;
+    }
+    header .HeaderBottom div h3{
+      font-size: 19px;
+    }
+
+
+
+    
+  }
+  @media (max-width: 680px){
+    .container{
+      max-width: 500px;
+    }
+    .HeaderBottom__Span{
+      display: none;
+    }
+    header .HeaderBottom{
+      margin-top: 120px;
+    }
+    header .HeaderBottom div h3{
+      margin-right: 0px;
+      width: 320px;
+      font-size: 24px;
+    }
+    header .HeaderTop{
+      padding-top: 20px;
+    }
+
+
+
+    footer{
+        height: 400px;
+      .Footer{
+          .Footer__RightSide{
+                .RightSide__Block{
+                    margin: 0;
+                    &:nth-child(#{3}n){
+                        margin: 0;
+                    }
+                    h2{
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                      }
+                    h3{
+                          margin-bottom: 7px;
+                        a{
+                            font-size: 16px;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+  @media (max-width: 540px){
+    .container{
+      max-width: 420px;
+    }
+    header .HeaderBottom div h1{
+      font-size: 80px;
+    }
+    header .HeaderBottom div h3{
+      width: 280px;
+    }
+    header .PhoneMenu nav .HeaderTop_Logo img{
+      height: 50px;
+    }
+    header .PhoneMenu nav ul{
+      margin-left: 30px;
+    }
+    header .PhoneMenu nav ul li a{
+      font-size: 27px;
+    }
+  }
+  @media (max-width: 480px){
+    header{
+      background-position-x: right;
+    }
+    .container{
+      max-width: 350px;
+    }
+    .PhoneMenu nav img{
+      height: 40px;
+    }
+    header .HeaderTop ul #Burger{
+      height: 40px;
+    }
+    header .HeaderBottom{
+      justify-content: center;
+    }
+    header .HeaderBottom div h1{
+      background-color: #303030;
+      font-size: 100px;
+    }
+    header .HeaderBottom div h3{
+      font-size: 24px;
+      width: 340px;
+    }
+
+
+    footer{
+        height: 350px;
+      .Footer{
+          .Footer__RightSide{
+                .RightSide__Block{
+                    width: 120px;
+                    h2{
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                      }
+                    h3{
+                          margin-bottom: 7px;
+                        a{
+                            font-size: 13px;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  
+  
+  }
+  @media (max-width: 375px){
+    .container{
+      max-width: 300px;
+    }
+    header .HeaderBottom div h1{
+      font-size: 90px;
+    }
+    header .HeaderBottom div h3{
+      width: 300px;
+    }
+    header .PhoneMenu nav .HeaderTop_Logo img{
+      height: 40px;
+    }
+    header .PhoneMenu nav ul li a{
+      font-size: 20px;
+    }
+    footer{
+        height: 200px;
+      .Footer{
+          .Footer__RightSide{
+                .RightSide__Block{
+                    h2{
+                        display: none;
+                      }
+                    h3{
+                        display: none;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  @media (max-width: 320px){
+    .container{
+      max-width: 280px;
+    }
+    header .HeaderBottom div h1{
+      font-size: 80px;
+    }
+    header .HeaderBottom div h3{
+      width: 250px;
+    }
+  }
+
+/*ADAPTATION*/
