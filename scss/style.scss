@@ -38,6 +38,18 @@ $whitecolor: #ffff;
     font-size: $size;
     font-family: 'Grand Hotel';  
 }
+@mixin BackGround($img, $color){
+    background: url($img);
+    background-color: $color;
+    background-size: cover;
+}
+@mixin grid($cols, $margin){
+    width: ((100%-  (($cols - 1) * $margin)) / $cols);
+
+    &:nth-child(#{$cols}n){
+      margin-right: 0;
+    }
+}
 
 
 
@@ -47,7 +59,16 @@ $whitecolor: #ffff;
 .wrapper{
     min-width: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
+[class*="__container"]{
+    max-width: 1175px;
+    margin: 0 auto;
+}
+
+
 .container{
     max-width: 1330px;
     margin: 0 auto;
@@ -60,13 +81,10 @@ $whitecolor: #ffff;
 /*HEADER*/
 
 header{
+    @include BackGround("../images/HeaderBackground.jpg", $backcolor);
     background-position-x: center;
     margin: 0;
     padding: 0;
-    background-image: url("../images/HeaderBackground.jpg");
-    background-color: $backcolor;
-    background-size: cover;
-    
     min-height: 746px;
     .HeaderTop{
         display: flex;
@@ -178,21 +196,23 @@ header{
                 font-weight: 400; 
                   
             }
-            a{
-                @include MainText($darkcolor, 16px);
-                background-color: $yellowcolor;
-                font-weight: 700;
-                padding: 14px;
-                padding-left: 46px;
-                padding-right: 46px;
-                border-radius: 5px;
-                transition: 0.3s;
-                &:hover{
-                    box-shadow: 5px 5px 5px black;
-                }
-            }
+            
         }
     }
+}
+.button{
+  @include MainText($darkcolor, 16px);
+  text-transform: uppercase;
+  background-color: $yellowcolor;
+  font-weight: 700;
+  padding: 14px;
+  padding-left: 46px;
+  padding-right: 46px;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover{
+      box-shadow: 5px 5px 5px black;
+  }
 }
 
 
@@ -207,8 +227,368 @@ header{
 
 /*MAIN*/
 
+.main {
+
+  &__block {
+    display: flex;
+    min-height: 795px;
+  }
 
 
+
+
+
+
+
+
+
+  //FIRST BLOCK
+    .main__block_fisrt {
+      background-color: $whitecolor;
+    }
+    .main__body_first{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .firstblock__title{
+      margin-top: 145px;
+      @include MainCaption($darkcolor, 68px);
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+    .firstblock__subtitle{
+      @include MainText($darkcolor, 25px);
+      font-weight: 300;
+      max-width: 885px;
+      margin-bottom: 75px;
+    }
+    .main__colums_fisrtblock {
+      @include grid(3, 12%);
+      .colums__img_firstblock{
+      align-items: center;
+      transition: 1.8s;
+        &:hover{
+        transform: rotate(360deg);
+        }
+      } 
+      .colums__title_firstblock{
+        @include MainCaption($darkcolor, 42px);
+        margin: 8px 0px 8px 0px;
+        font-weight: 300;
+        text-align: center;
+        }
+      .colums__subtitle_firstblock{
+        @include MainText($darkcolor, 16px);
+        font-weight: 400;
+        text-align: center;
+      
+        }
+    
+   
+    }
+
+    //FIRST BLOCK
+
+
+
+
+
+
+
+
+    //SECOND BlOCK
+    .main__block_second {
+      @include BackGround("../images/MainTopBackground.png", $whitecolor);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      background-position-y: 165px;
+      background-repeat: no-repeat;
+    }
+    .main__body_second{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 100px;
+    }
+    .main__text_secondblock{
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: flex-start;
+      margin-left: 160px;
+      margin-bottom: 35px;
+    }
+        .main__title_secondblock{
+          @include MainCaption($yellowcolor, 78px);
+          font-weight: 300;
+          margin-bottom: 36px
+        }
+        .main__subtitle_secondblock{
+          @include MainText($whitecolor, 25px);
+          font-weight: 300;
+          margin-bottom: 60px;
+          max-width: 510px;
+          text-align: start;
+        }
+
+
+
+    //SECOND BLOCK
+
+
+
+
+
+
+
+
+    //THIRD BLOCK
+ 
+    .main__block_third {
+      
+      // background-color: #2f2f2f;
+      @include BackGround("../images/BackgroudVegetables.png", #2f2f2f);
+      background-size: auto;
+
+    }
+    .main__body_third{
+      display: flex;
+      flex-direction: column;
+    }
+    .thirdblock__title{
+      margin-top: 145px;
+      @include MainCaption($yellowcolor, 68px);
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+    .thirdblock__subtitle{
+      @include MainText($whitecolor, 25px);
+      font-weight: 300;
+      max-width: 890px;
+      margin-bottom: 75px;
+    }
+    .main__colums_thirdblock {
+      background-color: $backcolor;
+      justify-content: center;
+      border: $whitecolor solid 4px;
+      border-radius: 50%;
+      align-items: center;
+      transition: 0.1s;
+      height: 180px;
+      width: 180px;
+      margin-right: 110px;
+      &:nth-child(4){
+        margin: 0;
+      }
+      
+        &:hover{
+        transform:scale(1.1);
+        }
+      
+    }
+    .colums__title_thirdblock{
+      @include MainText($yellowcolor, 55px)
+    }
+    .colums__subtitle_thirdblock{
+      @include MainText($whitecolor, 25px);
+    }
+
+
+    //THIRD BLOCK
+
+ 
+
+
+  
+
+
+
+    //FOURTH BLOCK
+
+    .main__block_fourth{
+      @include BackGround("../images/MainBottomBackground.png", $whitecolor);
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      background-position-y: -665px;
+      background-repeat: no-repeat;
+      background-size: 2000px;
+      // background-color: $backcolor;
+    }
+    .main__body_fourth{
+      display: flex;
+      flex-direction: row;
+      margin-top: 120px;
+    }
+    .main__text_fourthblock{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      margin-right: 160px;
+      margin-top: 35px;
+    }
+        .main__title_fourthblock{
+          @include MainCaption($yellowcolor, 78px);
+          font-weight: 300;
+          margin-bottom: 36px
+        }
+        .main__subtitle_fourthblock{
+          @include MainText($whitecolor, 25px);
+          font-weight: 300;
+          margin-bottom: 60px;
+          max-width: 510px;
+          text-align: start;
+        }
+
+    //FOURTH BLOCK
+
+    
+
+        //FIFTh BLOCK
+      .main__block_fifth {
+        @include BackGround("../images/MainYellowBackground.jpg", #2f2f2f);
+        background-size: auto;
+        background-size: 2000px;
+        background-position-y: -200px;
+      }
+      .main__body_fifth{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+      }
+      .main__text_fifthblock{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin-top: 35px;
+      }
+      .main__subtitle_fifthblock{
+        @include MainText($darkcolor, 35px);
+        font-weight: 500;
+        max-width: 885px;
+      }
+      .main__title_fifthhblock{
+        margin-top: 50px;
+        @include MainCaption($darkcolor, 68px);
+        font-weight: 300;
+      }
+
+
+
+
+
+
+
+      //FIFTH BLOCK
+
+
+      //SIXTH BLOCK
+    .main__block_sixth {
+      @include BackGround("../images/BackgroudVegetables.png", #e9e9e9);
+        background-size: contain;
+    }
+    .main__body_sixth{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+    }
+    .main__title_sixthhblock{
+      @include MainCaption($darkcolor, 100px);
+      font-weight: 500;
+    }
+    .main__subtitle_sixthblock{
+      @include MainText($darkcolor, 27px);
+      max-width: 830px;
+      font-weight: 500;
+      margin-bottom: 80px;
+    }
+    .main__form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main__form button{
+      text-transform: uppercase;
+      width: 222px;
+      height: 45px;
+      background-color: $yellowcolor;
+      color: $darkcolor;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+      @include MainText($darkcolor, 20px);
+      border-radius: 0px 10px 10px 0px;
+      font-weight: 800;
+      &:hover{
+        box-shadow: 5px 5px 5px black;
+    }
+    }
+    #input{
+      @include MainText($darkcolor, 20px);
+      padding-left: 35px;
+      height: 43px;
+      width: 518px;
+      border-radius: 10px 0 0 10px;
+      box-shadow: none;
+      border: none;
+      background-color: #f4f4f4;
+    }
+  
+    //SIXTH BLOCK
+
+  // .main__text
+
+  &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  // .main__title
+
+  &__title {
+      text-align: center;  
+  }
+
+
+  // .main__subtitle
+
+  &__subtitle {
+    text-align: center;
+  }
+  
+  // .main__content
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // vertical-align: center;
+  }
+  .main__img{
+    display: block;
+  }
+
+  // .main__colums
+
+  &__colums {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+
+}
 
 /*MAIN*/
 
@@ -333,7 +713,7 @@ footer{
         font-size: 31px;
         margin-bottom: 65px;
       }
-      header .HeaderBottom div a{
+      header .HeaderBottom div .button{
         font-size: 27px;
       }
 
@@ -501,10 +881,6 @@ footer{
       font-size: 22px;
       margin-bottom: 45px;
     }
-    header .HeaderBottom div a{
-      font-size: 21px;
-    }
-
 
 
     footer{
